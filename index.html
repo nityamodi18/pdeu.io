@@ -24,6 +24,10 @@
             padding: 0.5rem 0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        h2.text-center {
+            color: #A52A2A; /* Brown color */
+}
+
 
         .navbar-brand {
             font-weight: bold;
@@ -33,11 +37,15 @@
         }
 
         .navbar-logo {
-            height: 40px;
+            height: 75px; /* Adjust the PDEU logo size */
             width: auto;
-            margin-right: 10px;
-            transition: transform 0.3s ease;
         }
+
+        .nav-logo {
+            height: 70px; /* Adjust size for school logos */
+            width: auto;
+        }
+
 
         .navbar-brand:hover .navbar-logo {
             transform: scale(1.05);
@@ -58,17 +66,19 @@
 
         /* Enhanced Banner */
         .banner {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./image/DJI_20231018112321_0027_D_DJISID3PRO\ \(1\).jpg');
-            height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./image/pdeu.jpg');
+            height: 92vh; /* Fullscreen height */
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            background-size: cover;
-            background-position: center;
+            background-size: cover; /* Ensures the background image covers the entire screen */
+            background-position: center; /* Centers the background image */
             color: white;
             padding: 20px;
-        }
+            
+        }   
+
 
         .banner-content {
             text-align: center;
@@ -98,7 +108,7 @@
             box-shadow: 4px 0 10px rgba(0,0,0,0.1);
             z-index: 3;
         }
-
+        
         .logo {
             width: 100%;
             height: auto;
@@ -113,41 +123,53 @@
 
         /* Enhanced Departments Section */
         .departments {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem 0;
-        }
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+    .dept-title {
+    font-size: 20px; /* Adjust to fit all titles evenly */
+    text-align: center;
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds '...' if text overflows */
+    width: 100%; /* Ensures consistency */
+}
 
-        .dept-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-        }
+.dept-content p {
+    text-align: justify; /* Justifies paragraph text */
+    min-height: 80px; /* Ensures equal height for all paragraphs */
+}
+.dept-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; /* Ensures even spacing */
+    width: 300px; /* Adjust as needed */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+.dept-content {
+    flex-grow: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-        .dept-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
+    .dept-image {
+        width: 100%;
+        height: 300px; /* Ensures uniform image size */
+        object-fit: cover; /* Ensures images maintain aspect ratio */
+    }
+    .btn {
+        margin-top: auto;
+    }
 
-        .dept-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .dept-content {
-            padding: 1.5rem;
-        }
-
-        .dept-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
 
         /* Enhanced Image Gallery */
         .image-gallery {
@@ -175,39 +197,77 @@
             transform: scale(1.1);
         }
 
-        /* Enhanced About Section */
-        .about-section {
-            background-color: #f8f9fa;
-            padding: 4rem 0;
-            margin: 2rem 0;
-        }
+        .about-content .col-lg-6 {
+        padding: 15px; /* Optional: adds space inside each column */
+    }
+    .facility-container {
+    border: 2px solid #800000; /* Dark red border */
+    padding: 10px; /* Adds space inside the border */
+    border-radius: 8px; /* Optional: Rounded corners */
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px; /* Adds space between items */
+}
 
+
+    /* Make sure the video is responsive */
+    .ratio {
+        position: relative;
+        height: 20px;
+        padding-bottom: 50.25%; /* Aspect ratio 16:9 */
+        overflow: hidden;
+        max-width: 80%;
+    }
+
+    .ratio iframe {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        top: 60px;
+
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
         .about-content {
-            max-width: 800px;
-            margin: 0 auto;
+            flex-direction: column;        
+            max-width: 80px;
+            margin: 10px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
+    }
 
         /* Enhanced Contact Section */
         .contact-section {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 4rem 0;
+            padding: 20px 0;
+            
         }
+        h2.text-center.contact-heading {
+    color: white;
+}
+
 
         .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 20px;
         }
 
-        .contact-item {
-            text-align: center;
-            padding: 1.5rem;
-        }
+        .contact-item h3 {
+            font-size: 1.2rem; /* Smaller heading font size */
+            margin-top: 5px;
+            margin-bottom: 5px;
+    }
 
         .contact-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
         }
 
         /* Button Styles */
@@ -221,24 +281,28 @@
             border-color: var(--accent-color);
         }
 
-        /* Enhanced Footer */
         .footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 3rem 0 1.5rem;
+            background: #222;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            font-weight: bold;
+        .footer-section {
+            flex: 0.5;
+            min-width: 20px;
+        }
+
+        .footer h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
         }
 
         .footer-links {
@@ -247,17 +311,27 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 5px;
         }
 
         .footer-links a {
-            color: #fff;
+            color: #ddd;
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-size: 14px;
         }
 
         .footer-links a:hover {
-            color: var(--accent-color);
+            color: #fff;
+        }
+
+        .social-links a {
+            color: #ddd;
+            font-size: 18px;
+            margin: 0 8px;
+        }
+
+        .social-links a:hover {
+            color: #fff;
         }
 
         .social-links {
@@ -274,8 +348,25 @@
         .social-links a:hover {
             color: var(--accent-color);
         }
+        
+        @media (max-width: 768px) {
+        .contact-section {
+            padding: 15px 0;
+        }
+
+        .contact-item h3, .footer-section h3 {
+            font-size: 1.1rem; /* Smaller font on mobile */
+        }
+
+        .contact-item p {
+            font-size: 0.8rem; /* Smaller font for paragraphs */
+        }
+
+        .social-links a {
+            font-size: 1.1rem; /* Smaller icon size on mobile */
+        }
+    }
         .excellence-carousel {
-            padding: 4rem 0;
             background: white;
         }
 
@@ -290,6 +381,21 @@
             border-radius: 8px;
             margin: 1rem 0;
         }
+
+
+        .centre-item {
+            text-align: center; /* Centers everything inside the container */
+            margin-bottom: 20px; /* Adds space between items */
+            max-width: 100%;
+            object-fit: cover;
+        }
+
+        img {
+            width: 100%; /* Ensures images are responsive */
+            height: auto;
+            border-radius: 5px; /* Optional: rounded corners for images */
+        }
+
 
         /* Animations */
         @keyframes fadeIn {
@@ -318,11 +424,11 @@
             .banner-content {
                 padding: 0 10px;
             }
-        .programs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            padding: 2rem 0;
+            .programs {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+                padding: 2rem 0;
         }
 
         .program-card {
@@ -341,8 +447,9 @@
         /* Excellence Centers Section */
         .excellence-centers {
             position: relative;
-            padding: 4rem 0;
+            padding: 2rem 0;
         }
+        
 
         .center-slide {
             text-align: center;
@@ -359,19 +466,116 @@
 
         /* Accreditations Section */
         .accreditations {
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
             padding: 3rem 0;
+            text-align: center;
         }
 
-        .accreditation-item {
+        .accreditation-container {
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+        align-items: center; /* Centers vertically */
+        flex-wrap: wrap; /* Ensures responsiveness */
+        gap: 20px; /* Adds spacing between items */
+        text-align: center; /* Centers text inside each item */
+    }
+
+    .accreditation-item {
+        background-color: #800000;
+        color: white;
+        padding: 20px;
+        text-align: center; /* Ensures text inside is centered */
+        width: 300px; /* Adjust width as needed */
+        border-radius: 10px; /* Adds rounded corners */
+    }
+
+
+        /* Hover Effect */
+        .accreditation-item:hover {
+            background: rgba(255, 255, 255, 0.3) !important;
+            transform: translateY(-5px);
+        }
+
+        /* Headings inside Accreditation Items */
+        .accreditation-item h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white !important;
+        }
+
+        /* Paragraph inside Accreditation Items */
+        .accreditation-item p {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            color: white !important;
+        }
+        
+        .carousel-item .row {
+            
+            width: 40px;
+            height: 80px;
+            object-fit: cover;
+            display: flex;
+            justify-content: space-between; /* Ensures correct positioning */
+            align-items: center;
+        }
+
+        .image-container img {
+            width: 500px !important; /* Significantly increased width */
+            height: 400px !important; /* Significantly increased height */
+            object-fit: cover; /* Ensures images scale properly */
+            border-radius: 8px; /* Optional for rounded corners */
+            margin: 50px !important; /* Added substantial spacing around images */
+            border: 3px solid red !important; /* Added border for visibility */
+        }
+
+
+
+        .image-name {
             text-align: center;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin: 1rem 0;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333; 
+        } 
+
+        /* Specific alignment for each image */
+        .image-container:nth-child(1) {
+            align-self: flex-start;
+            text-align: left;
         }
+
+        .image-container:nth-child(2) {
+            align-self: center;
+            text-align: center;
         }
+
+        .image-container:nth-child(3) {
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        /* Carousel container for 3 items */
+        .carousel-inner {
+            display: flex;
+            width: 100%;
+            border: 1px solid black;
+        }
+
+       
+
+        .carousel-item {
+            border: 1px solid black;  /* Temporary border to show boundaries */
+        }
+
+       
+        .container {
+            width: 100%;
+    }
+
+}
+
     </style>
 </head>
 <body>
@@ -379,72 +583,118 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#home">
-                <img src="./image/Logo - NEw.png" alt="PDEU Logo" class="navbar-logo">
-                
+                <img src="./image/pdeu_new_logo_white.png   " alt="PDEU Logo" class="navbar-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#excellence">Excellence</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sot">
+                            <img src="./image/sot.jpg" alt="SOT Logo" class="nav-logo">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#science">
+                            <img src="./image/SoET1.jpg" alt="Science Logo" class="nav-logo">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sls">
+                            <img src="./image/sls.jpg" alt="SLS Logo" class="nav-logo">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#som">
+                            <img src="./image/SoM1.jpg" alt="SOM Logo" class="nav-logo">
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+    
 
     <!-- Banner -->
     <div class="banner">
         <div class="container">
-            <div class="banner-content">
-                <h1>Welcome to Pandit Deendayal Energy University</h1>
-                <p class="lead">Empowering Future Leaders in Energy & Technology</p>
-                <a href="#about" class="btn btn-light btn-lg mt-3">Explore PDEU</a>
+                 <div class="md:flex">
+                <div class="md:shrink-0">
+                    <div class="banner-content">
+                        <h1>Welcome to Pandit Deendayal Energy University</h1>
+                        <p class="lead">Empowering Future Leaders in Energy & Technology</p>
+                        <a href="#departments" class="btn btn-light btn-lg  mt-3">Admission 2025</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <h2 class="text-center mb-4">About PDEU</h2>
-                <div class="ratio ratio-16x9 mb-4">
-                    <iframe src="https://www.youtube.com/embed/DD2nxhFowFk" title="About PDEU" allowfullscreen></iframe>
+    <!-- Program Section -->
+    <section id="departments" class="container mt-5 py-4">
+        <h2 class="text-center fw-bold mb-4">Our Programs</h2>
+        <div class="departments">
+            <div class="dept-card">
+                <img src="./image/eng.jpg" alt="Engineering & Technology" class="dept-image">
+                <div class="dept-content">
+                    <h3 class="dept-title">Engineering & Technology</h3>
+                    <p>Offering cutting-edge programs in engineering and technology with a focus on energy sector innovations.</p>
+                    <a href="./sot.html" class="btn btn-primary">Learn More</a>
                 </div>
-                <p>Pandit Deendayal Energy University (PDEU) is a premier university located in Gandhinagar, Gujarat, focusing on energy and technology education. Established in 2007, PDEU has evolved into India's only energy university, dedicated to cutting-edge research and comprehensive education in energy sectors.</p>
-                <p>Today, PDEU stands as a beacon of excellence with significant national and international recognition, actively contributing to India's AatmaNirbhar Bharat initiative through innovative research and industry collaboration.</p>
+            </div>
+            <div class="dept-card">
+                <img src="./image/sci.jpg" alt="Sciences" class="dept-image">
+                <div class="dept-content">
+                    <h3 class="dept-title">Sciences</h3>
+                    <p>Developing future business leaders with specialized focus on energy sector management.</p>
+                    <a href="./som.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="dept-card">
+                <img src="./image/slslsl.jpg" alt="Liberal Studies" class="dept-image">
+                <div class="dept-content">
+                    <h3 class="dept-title">Liberal Studies</h3>
+                    <p>Providing holistic education combining liberal arts with technical knowledge.</p>
+                    <a href="./sls.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="dept-card">
+                <img src="./image/mba.jpg" alt="Management" class="dept-image">
+                <div class="dept-content">
+                    <h3 class="dept-title">Management</h3>
+                    <p>Providing holistic education combining liberal arts with technical knowledge.</p>
+                    <a href="https://admission.pdeu.ac.in/mba/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Learn More</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="accreditations">
+
+    <section class="accreditations  py-4">
         <div class="container">
-            <h2 class="text-center mb-4">Our Accreditations</h2>
+            <h2 class=" fw-bold text-center  mt-2 mb-2">Our Accreditations </h2>
             <div class="row">
-                <div class="col-md-3">
-                    <div class="accreditation-item">
+                <div class="col-md-3 mt-5">
+                    <div class="accreditation-item" style="background-color: #800000; color: white; padding: 20px ; text-align: center;">
                         <h4>NAAC A++</h4>
-                        <p>Accredited</p>
+                        <p>Accredited 3.52/4</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="accreditation-item">
+                <div class="col-md-3 mt-5">
+                    <div class="accreditation-item" style="background-color: #800000; color: white; padding: 20px; text-align: center;">
                         <h4>Top 150</h4>
-                        <p>Universities in India by NIRF 2024 Rankings</p>
+                        <p>Universities in India by NIRF Rankings</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="accreditation-item">
+                <div class="col-md-3 mt-5">
+                    <div class="accreditation-item" style="background-color: #800000; color: white; padding: 20px; text-align: center;">
                         <h4>Centre of Excellence</h4>
                         <p>Status by Govt. of Gujarat</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="accreditation-item">
+                <div class="col-md-3 mt-5">
+                    <div class="accreditation-item" style="background-color: #800000; color: white; padding: 20px; text-align: center;">
                         <h4>5 Star Plus</h4>
                         <p>Rating by GSIRF 2024</p>
                     </div>
@@ -453,176 +703,189 @@
         </div>
     </section>
 
-    <!-- Program Section -->
-    <section id="departments" class="container my-5">
-        <h2 class="text-center mb-4">Our Programs</h2>
-        <div class="departments">
-            <div class="dept-card">
-                <img src="./image/trc.jpeg" alt="Engineering & Technology" class="dept-image">
-                <div class="dept-content">
-                    <h3 class="dept-title">Engineering & Technology</h3>
-                    <p>Offering cutting-edge programs in engineering and technology with a focus on energy sector innovations.</p>
-                    <a href="./sot.html" class="btn btn-primary">Learn More</a>
+
+    <!-- About Section -->
+    <section id="about" class="about-section my-2 py-2">
+    <h2 class="fw-bold text-center mt-6 " style="color: #A52A2A;">About PDEU</h2>
+       
+        <div class="container py-4 ">
+            <div class="row align-items-center g-2">  <!-- Reduced gap using g-2 -->
+                <!-- Video on the left -->
+                <div class="col-lg-6 mb-3">  <!-- Reduced bottom margin -->
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/DD2nxhFowFk" title="About PDEU" allowfullscreen></iframe>
+                    </div>
                 </div>
-            </div>
-            <div class="dept-card">
-                <img src="./image/solar.jpeg" alt="Sciences" class="dept-image">
-                <div class="dept-content">
-                    <h3 class="dept-title">Sciences</h3>
-                    <p>Developing future business leaders with specialized focus on energy sector management.</p>
-                    <a href="./som.htm" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
-            <div class="dept-card">
-                <img src="./image/ilove_pdeu.jpeg" alt="Liberal Studies" class="dept-image">
-                <div class="dept-content">
-                    <h3 class="dept-title">Liberal Studies</h3>
-                    <p>Providing holistic education combining liberal arts with technical knowledge.</p>
-                    <a href="./sls.html" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
-            <div class="dept-card">
-                <img src="./image/ilove_pdeu.jpeg" alt="Management" class="dept-image">
-                <div class="dept-content">
-                    <h3 class="dept-title">Management</h3>
-                    <p>Providing holistic education combining liberal arts with technical knowledge.</p>
-                    <a href="./sls.html" class="btn btn-primary">Learn More</a>
+    
+                <!-- Text on the right -->
+                <div class="col-lg-5 d-flex flex-column justify-content-center"> <!-- Fixed syntax & spacing -->
+                    <div class="text-center py--3 mt-2 ">  <!-- Reduced bottom margin -->
+                       
+                    </div>
+                    <p style="font-size: 22px; text-align: justify;" >
+                        Pandit Deendayal Energy University (PDEU) is a premier university located in Gandhinagar, Gujarat, focusing on energy and technology education. Established in 2007, PDEU has evolved into India's only energy university, dedicated to cutting-edge research and comprehensive education in energy sectors.
+                    </p>
+                    <p style="font-size: 22px; text-align: justify;">
+                        Today, PDEU stands as a beacon of excellence with significant national and international recognition, actively contributing to India's AatmaNirbhar Bharat initiative through innovative research and industry collaboration.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="excellence" class="excellence-carousel">
-        <div class="container">
-            <h2 class="text-center mb-4">Our Centres of Excellence</h2>
-            <div id="excellenceCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <!-- Carousel items will be populated by JavaScript -->
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#excellenceCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#excellenceCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
+    
+    <section id="academic-excellence" class="container mt-2 py-3">
+        <h2 class="text-center fw-bold mb-4">Our Academic Excellence</h2>
+        <div class="row">
+            <div class="col-md-3 mt-4 mb-5">
+                <a href="https://pdeu.ac.in/academics" class="excellence-card dept-card text-center d-flex align-items-center justify-content-center" style="background-color: #800000; color: white; padding: 20px; text-decoration: none; height: 100px; border-radius: 8px; font-weight: bold; font-size: 1.2rem; transition: transform 0.3s, background-color 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.backgroundColor='#a52a2a';" onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#800000';">
+                    Academics
+                </a>
+            </div>
+            <div class="col-md-3 mt-4 mb-5">
+                <a href="https://pdeu.ac.in/research" class="excellence-card dept-card text-center d-flex align-items-center justify-content-center" style="background-color: #800000; color: white; padding: 20px; text-decoration: none; height: 100px; border-radius: 8px; font-weight: bold; font-size: 1.2rem; transition: transform 0.3s, background-color 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.backgroundColor='#a52a2a';" onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#800000';">
+                    Research
+                </a>
+            </div>
+            <div class="col-md-3 mt-4 mb-5">
+                <a href="https://pdeu.ac.in/faculties-and-staff" class="excellence-card dept-card text-center d-flex align-items-center justify-content-center" style="background-color: #800000; color: white; padding: 20px; text-decoration: none; height: 100px; border-radius: 8px; font-weight: bold; font-size: 1.2rem; transition: transform 0.3s, background-color 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.backgroundColor='#a52a2a';" onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#800000';">
+                    Faculty
+                </a>
+            </div>
+            <div class="col-md-3 mt-4 mb-5">
+                <a href="https://pdeu.ac.in/placements" class="excellence-card dept-card text-center d-flex align-items-center justify-content-center" style="background-color: #800000; color: white; padding: 20px; text-decoration: none; height: 100px; border-radius: 8px; font-weight: bold; font-size: 1.2rem; transition: transform 0.3s, background-color 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.backgroundColor='#a52a2a';" onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#800000';">
+                    Placements
+                </a>
             </div>
         </div>
     </section>
 
+    <section id="excellence" class="excellence-carousel my-6 mb-4 ">
+        <div class="container mx-auto px-0">
+            <h2 class="text-center text-2xl font-semibold text-gray-800  fw-bold ">Our Centres of Excellence</h2>
+            
+            <div id="excellenceCarousel" class="carousel slide w-full mt-5 " data-bs-ride="carousel">
+                <div class="carousel-inner w-full" id="carouselInner"></div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="text-center mb-4">Contact Us</h2>
+            <h2 class="text-center  contact-heading">Contact Us</h2>
             <div class="contact-info">
                 <div class="contact-item">
-                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <i class="fas fa-map-marker-alt contact-icon mb--2"></i>
                     <h3>Address</h3>
                     <p>Knowledge Corridor, Raisan,<br>Gandhinagar, Gujarat – 382426, India</p>
                 </div>
                 <div class="contact-item">
-                    <i class="fas fa-globe contact-icon"></i>
+                    <i class="fas fa-globe contact-icon mb--2"></i>
                     <h3>Website</h3>
                     <p><a href="http://www.pdeu.ac.in" class="text-white">www.pdeu.ac.in</a></p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#programs">Programs</a></li>
-                        <li><a href="#excellence">Centres of Excellence</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
+                <div class="footer-section my-10">
                     <h3>Follow Us</h3>
                     <div class="social-links">
                         <a href="https://www.facebook.com/pdeuofficial" target="_blank"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.instagram.com/pdeuofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.youtube.com/@panditdeendayalenergyunive9541" target="_blank"><i class="fab fa-youtube"></i></a>
                         <a href="https://www.linkedin.com/school/pdeuofficial/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </div>
+                    </div>  
                 </div>
             </div>
-            <div class="text-center pt-3 border-top">
-                <p>Pandit Deendayal Energy University</p>
-                <p>Knowledge Corridor, Raisan, Gandhinagar, Gujarat – 382426, India</p>
-                <p><a href="http://www.pdeu.ac.in" class="text-white">www.pdeu.ac.in</a></p>
-                <p>&copy; 2025 Pandit Deendayal Energy University. All Rights Reserved.</p>
             </div>
         </div>
-    </footer>
+    </section>
+   
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Centres of Excellence Data
-        const centres = [
-            "Semiconductor Packaging Skill Training Centre (ATMP)",
-            "Solar PV Panel Assembly Line (45 Mw)",
-            "Solar Research Development Centre (SRDC)",
-            "1 MW Solar Power Plant Integrated to Grid",
-            "Smart Hybrid Microgrid - Battery Energy Storage (100 Kwh)",
-            "Centre For Water Treatment And Waste Water Management",
-            "Maruti International Automobile Centre Of Excellence (IACE)",
-            "Siemens Centre Of Excellence For Automation",
-            "Additive Manufacturing (3d Metal Printing) (Ti/Co-Cr)",
-            "Innovation & Incubation Centre (IIC)",
-            "Centre For Bio-Fuel And Bio-Energy Studies (CBBS)",
-            "Bio Diesel Plant (100 L/Hr)",
-            "Drilling Cementing & Stimulation Centre (DCS)",
-            "Centre Of Excellence For Geothermal Energy (CEGE)",
-            "Carbon Capture And Sequestration (1 TPD)",
-            "Green Hydrogen"
-        ];
+<script>
+    const centres = [
+    { image: "image/photos.jpg" },
+    { image: "image/photos2.jpg" },
+    { image: "image/photos3.jpg" },
+    { image: "image/photos4.jpg" },
+    { image: "image/photos5.jpg" },
+    { image: "image/photos6.jpg" },
+    { image: "image/photos7.jpg" },
+    { image: "image/photos8.jpg" },
+    { image: "image/photos9.jpg" },
+    { image: "image/photos10.jpg" },
+    { image: "image/photos11.jpg" },
+    { image: "image/photos12.jpg" }
+];
 
-        // Populate Carousel
-        const carouselInner = document.querySelector('.carousel-inner');
-        centres.forEach((centre, index) => {
-            const div = document.createElement('div');
-            div.className = 'carousel-item' + (index === 0 ? ' active' : '');
-            div.innerHTML = `
-                <div class="excellence-item">
-                    <h4>${centre}</h4>
-                </div>
-            `;
-            carouselInner.appendChild(div);
-        });
+const carouselInner = document.getElementById('carouselInner');
+const images = [
+    "./image/pdeu.jpg",
+    "./image/DJI_0058.jpg",
+    "./image/main_photo.jpg"
+]; // Add more images as needed
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+let currentImageIndex = 0;
 
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'var(--primary-color)';
-            } else {
-                navbar.style.background = 'linear-gradient(to right, var(--primary-color), var(--secondary-color))';
-            }
-        });
+function changeBackground() {
+    const banner = document.querySelector(".banner");
+    banner.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${images[currentImageIndex]})`;
 
-        // Initialize Bootstrap tooltips
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-    </script>
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+}
+
+// Initial call
+changeBackground();
+
+// Change background every 3 seconds
+setInterval(changeBackground, 3000);
+
+
+function generateCarousel() {
+    carouselInner.innerHTML = ""; // Clear previous content
+
+    let imagesPerSlide;
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth >= 992) {
+        imagesPerSlide = 3; // Laptop
+    } else if (screenWidth >= 768) {
+        imagesPerSlide = 2; // Tablet
+    } else {
+        imagesPerSlide = 1; // Mobile
+    }
+
+    for (let i = 0; i < centres.length; i += imagesPerSlide) {
+        const group = centres.slice(i, i + imagesPerSlide);
+        const isActive = i === 0 ? 'active' : '';
+const carouselItem = `
+    <div class="carousel-item ${isActive}">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                ${group.map(centre => `
+                    <div class="col-${12 / imagesPerSlide} d-flex justify-content-center">
+                        <div class="image-container text-center">
+                            <img src="${centre.image}" class="d-block img-fluid centre-image" alt="Image" style="max-width: 100%; height: auto; object-fit: cover;">
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    </div>
+`;
+
+        carouselInner.innerHTML += carouselItem;
+    }
+}
+
+// Run on page load and update on window resize
+generateCarousel();
+window.addEventListener('resize', generateCarousel);
+
+
+</script>
+</script>
 </body>
 </html>
